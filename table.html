@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Results</title>
+	<style type="text/css">
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even){background-color: #f2f2f2}
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Search Results</h1>
+	<table>
+		<tr>
+			<th>Thumbnail</th>
+			<th>Title</th>
+			<th>Published Time</th>
+			<th>View Count</th>
+			<th>Like Count</th>
+			<th>Comment Count</th>
+			<th>Video Link</th>
+		</tr>
+		{% for item in detail_list %}
+		<tr>
+			<td><img src="{{ item.thumbnail }}" alt="{{ item.title }} thumbnail" width="120" height="90"></td>
+			<td>{{ item.title }}</td>
+			<td>{{ item.time }}</td>
+			<td>{{ item.View_count }}</td>
+			<td>{{ item.Like_count }}</td>
+			<td>{{ item.Comment_count }}</td>
+			<td><a href="{{ item.video_link }}">Watch on YouTube</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
